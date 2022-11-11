@@ -1,86 +1,222 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { NextPage } from "next";
+import HeadComponent from "../components/HeadComponent";
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import { CheckCircleIcon, XCircleIcon } from "@heroicons/react/20/solid";
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
-
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+    <div className="">
+      <HeadComponent />
+      <Navbar />
+      <div className="flex min-h-screen flex-col items-center justify-center">
+        <main className="relative flex w-full flex-1 flex-col items-center justify-center text-center ">
+          <div
+            id={"hero"}
+            className="relative flex flex-col justify-center w-full max-h-20 bg-black flex-1 px-20 text-center min-h-[70vh] gap-y-8"
           >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and its API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            <h1 className="flex text-center justify-center px-8 text-6xl text-gray-100 font-medium select-none">
+              Call to Action
+            </h1>
+            <h2 className="flex text-center font-light justify-center text-xl text-gray-100 select-none tracking-wider italic">
+              Slogan / Subtitle
+            </h2>
+            <button
+              className="flex w-fit my-2 mx-auto text-center justify-center py-3 px-24 text-xl text-white bg-blue-700 rounded
+            hover:bg-opacity-90 active:scale-95"
+            >
+              Get Started
+            </button>
+          </div>
+          <div
+            id={"features"}
+            className="relative flex flex-col items-start justify-start w-full bg-white flex-1 px-20 text-center py-24 min-h-[50vh]"
           >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            <h1 className="flex justify-center text-6xl font-bold select-none">
+              Features
+            </h1>
+            <div className="flex flex-row items-center justify-between w-full py-24">
+              <div className="flex flex-col w-[20vw] h-[30vh] gap-y-4 border border-gray-300 rounded-lg pt-8">
+                <h1 className="flex text-center justify-center text-4xl text-black font-bold select-none pt-4">
+                  Feature 1
+                </h1>
+                <a className="text-lg">Feature 1 description</a>
+              </div>
+              <div className="flex flex-col w-[20vw] h-[30vh] gap-y-4 border border-gray-300 rounded-lg pt-8">
+                <h1 className="flex text-center justify-center text-4xl text-black font-bold select-none pt-4">
+                  Feature 1
+                </h1>
+                <a className="text-lg">Feature 1 description</a>
+              </div>
+              <div className="flex flex-col w-[20vw] h-[30vh] gap-y-4 border border-gray-300 rounded-lg pt-8">
+                <h1 className="flex text-center justify-center text-4xl text-black font-bold select-none pt-4">
+                  Feature 1
+                </h1>
+                <a className="text-lg">Feature 1 description</a>
+              </div>
+            </div>
+          </div>
+          <div
+            id={"pricing"}
+            className="relative flex flex-col justify-start w-full bg-white flex-1 px-48 text-center min-h-[90vh]"
           >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
+            <h1 className="flex text-center justify-center px-8 pb-12 text-6xl font-bold select-none">
+              Pricing
+            </h1>
+            <div className="flex flex-row items-center justify-between w-full p-24">
+              <div className="shadow-lg rounded-2xl w-[20vw] bg-white dark:bg-gray-800 p-4 border border-gray-300">
+                <p className="dark:text-gray-50 text-4xl font-bold my-4 text-left px-4">
+                  Free
+                </p>
+                <p className="text-gray-900 dark:text-white text-4xl font-bold text-left px-4">
+                  $0
+                  <span className="text-gray-400 text-sm"> / month</span>
+                </p>
+                <p className="text-gray-600 dark:text-gray-100 px-4 text-left my-6 ">
+                  For most businesses that want to optimize web queries.
+                </p>
+                <ul className="text-gray-600 dark:text-gray-100 w-full mb-6 py-4">
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    All illimited components
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Own custom Tailwind styles
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Unlimited Templates
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Free premium dashboard
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Best ranking
+                  </li>
+                  <li className="mb-3 flex items-center opacity-50">
+                    <XCircleIcon className="w-6 text-red-500 mr-2" />
+                    Prenium svg
+                  </li>
+                </ul>
+                <button
+                  type="button"
+                  className="flex w-full mt-8 mb-4 text-center justify-center py-2 text-white bg-black rounded
+                    hover:bg-opacity-90 active:scale-95 text-lg font-medium"
+                >
+                  Choose plan
+                </button>
+              </div>
+              <div className="shadow-lg rounded-2xl w-[20vw] bg-white dark:bg-gray-800 p-4 border border-gray-300">
+                <p className="dark:text-gray-50 text-4xl font-bold my-4 text-left px-4">
+                  Pro
+                </p>
+                <p className="text-gray-900 dark:text-white text-4xl font-bold text-left px-4">
+                  $0
+                  <span className="text-gray-400 text-sm"> / month</span>
+                </p>
+                <p className="text-gray-600 dark:text-gray-100 px-4 text-left my-6 ">
+                  For most businesses that want to optimize web queries.
+                </p>
+                <ul className="text-gray-600 dark:text-gray-100 w-full mb-6 py-4">
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    All illimited components
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Own custom Tailwind styles
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Unlimited Templates
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Free premium dashboard
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Best ranking
+                  </li>
+                  <li className="mb-3 flex items-center opacity-50">
+                    <XCircleIcon className="w-6 text-red-500 mr-2" />
+                    Prenium svg
+                  </li>
+                </ul>
+                <button
+                  type="button"
+                  className="flex w-full mt-8 mb-4 text-center justify-center py-2 text-white bg-black rounded
+                    hover:bg-opacity-90 active:scale-95 text-lg font-medium"
+                >
+                  Choose plan
+                </button>
+              </div>
+              <div className="shadow-lg rounded-2xl w-[20vw] bg-white dark:bg-gray-800 p-4 border border-gray-300">
+                <p className="dark:text-gray-50 text-4xl font-bold my-4 text-left px-4">
+                  Lifetime
+                </p>
+                <p className="text-gray-900 dark:text-white text-4xl font-bold text-left px-4">
+                  $0
+                  <span className="text-gray-400 text-sm"> / month</span>
+                </p>
+                <p className="text-gray-600 dark:text-gray-100 px-4 text-left my-6 ">
+                  For most businesses that want to optimize web queries.
+                </p>
+                <ul className="text-gray-600 dark:text-gray-100 w-full mb-6 py-4">
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    All illimited components
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Own custom Tailwind styles
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Unlimited Templates
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Free premium dashboard
+                  </li>
+                  <li className="mb-3 flex items-center ">
+                    <CheckCircleIcon className="w-6 text-emerald-500 mr-2" />
+                    Best ranking
+                  </li>
+                  <li className="mb-3 flex items-center opacity-50">
+                    <XCircleIcon className="w-6 text-red-500 mr-2" />
+                    Prenium svg
+                  </li>
+                </ul>
+                <button
+                  type="button"
+                  className="flex w-full mt-8 mb-4 text-center justify-center py-2 text-white bg-black rounded
+                    hover:bg-opacity-90 active:scale-95 text-lg font-medium"
+                >
+                  Choose plan
+                </button>
+              </div>{" "}
+            </div>
+          </div>
+          <div
+            id={"banner"}
+            className="relative flex flex-col justify-start w-full bg-white flex-1 my-24 px-48 text-center"
           >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center gap-2"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-        </a>
-      </footer>
+            {/*  Banner*/}
+            <div className="flex flex-col justify-start w-full h-fit bg-black flex-1 px-20 text-center py-24 ">
+              <h1 className="flex text-center justify-center text-6xl font-bold select-none text-white">
+                Banner
+              </h1>
+            </div>
+          </div>
+        </main>
+        <Footer />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
