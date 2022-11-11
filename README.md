@@ -2,5 +2,5 @@
 
 ## How to use
 ```bash
-npx create-next-app --example [Github Repository Link] <YOUR_APP_NAME>
+npx create-next-app --example https://github.com/MarketMakerLite/next-template <YOUR_APP_NAME>
 ```
